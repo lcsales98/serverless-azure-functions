@@ -1815,6 +1815,113 @@
           "help": "$bot_in_secret_help"
         }
       ]
+    },
+    {
+      "type": "kafkaTrigger",
+      "displayName": "$kafka_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\botIn.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myKafkaTrigger",
+          "required": true,
+          "label": "$kafkaTrigger_name_label",
+          "help": "$kafkaTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "brokerList",
+          "value": "string",
+          "required": true,
+          "label": "$kafkaTriger_brokerList_label",
+          "help": "$kafkaTrigger_brokerList_help"
+        },
+        {
+          "name": "topic",
+          "value": "string",
+          "required": true,
+          "label": "$kafkaTriger_topic_label",
+          "help": "$kafkaTrigger_topic_help"
+        },
+        {
+          "name": "cardinality",
+          "value": "string",
+          "defaultValue": "ONE",
+          "required": true,
+          "label": "$kafkaTriger_cardinality_label",
+          "help": "$kafkaTrigger_cardinality_help",
+          "validators": [
+            {
+              "expression": "^(MANY|ONE)$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "dataType",
+          "value": "string",
+          "required": true,
+          "label": "$kafkaTrigger_dataType_label",
+          "help": "$kafkaTrigger_dataType_help"
+        },
+        {
+          "name": "consumerGroup",
+          "value": "string",
+          "required": true,
+          "label": "$kafkaTrigger_consumerGroup_label",
+          "help": "$kafkaTrigger_consumerGroup_help"
+        },
+        {
+          "name": "avroSchema",
+          "value": "string",
+          "required": true,
+          "label": "$kafkaTrigger_avroSchema_label",
+          "help": "$kafkaTrigger_avroSchema_help"
+        },
+        {
+          "name": "authenticationMode",
+          "value": "string",
+          "defaultValue": "Plain",
+          "required": true,
+          "label": "$kafkaTrigger_authenticationMode_label",
+          "help": "$kafkaTrigger_authenticationMode_help",
+          "validators": [
+            {
+              "expression": "^(GSSAPI|PLAIN|SCRAMSHA256|SRAMSHA512)$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "protocol",
+          "value": "string",
+          "required": false,
+          "label": "$kafkaTrigger_protocol_label",
+          "help": "$kafkaTrigger_protocol_help"
+        },
+        {
+          "name": "username",
+          "value": "string",
+          "required": false,
+          "label": "$kafkaTrigger_username_label",
+          "help": "$kafkaTrigger_username_help"
+        },
+        {
+          "name": "password",
+          "value": "string",
+          "required": false,
+          "label": "$kafkaTrigger_password_label",
+          "help": "$kafkaTrigger_password_help"
+        }
+      ]
     }
   ]
 }
